@@ -1,0 +1,43 @@
+{
+  "name": "tag-play",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "import": "./lib/index.mjs",
+    "require": "./lib/index.cjs"
+  },
+  "module": "./lib/index.mjs",
+  "main": "./lib/index.cjs",
+  "types": "types/index.d.ts",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "author": "Donald Geddes",
+  "licence": "MIT",
+  "repository": "https://github.com/handlebauer/tag-play.git",
+  "publishConfig": {
+    "access": "public"
+  },
+  "prettier": "@hbauer/prettier-config",
+  "eslintConfig": {
+    "extends": "@hbauer/eslint-config"
+  },
+  "scripts": {
+    "build": "shx rm -rf ./lib && rollup -c && tsc -p jsconfig.json",
+    "test": "ava",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@hbauer/eslint-config": "^1.4.1",
+    "@hbauer/prettier-config": "^1.1.0",
+    "ava": "^4.0.1",
+    "eslint": "^8.9.0",
+    "eslint-plugin-import": "^2.25.4",
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1",
+    "rollup": "^2.67.3",
+    "shx": "^0.3.4",
+    "typescript": "^4.5.5"
+  }
+}
