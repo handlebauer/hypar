@@ -26,7 +26,8 @@
   "scripts": {
     "build": "shx rm -rf ./lib && rollup -c && tsc -p jsconfig.json",
     "test": "ava",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@hbauer/eslint-config": "^1.4.1",
